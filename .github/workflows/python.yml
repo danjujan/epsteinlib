@@ -24,4 +24,4 @@ jobs:
       - name: Test import
         run: python -c 'import epsteinlib'
       - name: Test example
-        run: python python/lattice_sum.py
+        run: python examples/python/lattice_sum.py
