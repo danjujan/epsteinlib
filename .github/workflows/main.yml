@@ -24,3 +24,4 @@ jobs:
     - run: nix run .#epsteinlib_dbg
     - run: nix flake check
     - run: nix develop -c tests
+    - run: nix develop -c docs
