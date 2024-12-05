@@ -5,6 +5,11 @@
 py_mod = import('python')
 py = py_mod.find_installation(pure: false)
 
+if host_machine.system() == 'darwin' and py.language_version() == '3.8'
+    # This fixes build failure on MacOS with Python 3.8
+    add_project_arguments('-Wno-deprecated-declarations', language: 'c')
+endif
+
 py.extension_module(
     'epsteinlib',
     'epsteinlib.pyx',
